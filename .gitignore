@@ -1,5 +1,7 @@
 *.aux
 *.bbl
+*.run.xml
+*-blx.bib
 *.blg
 *.log
 *.dvi
