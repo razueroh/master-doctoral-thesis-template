@@ -25,6 +25,7 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
 %oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+spanish, % Add language not included in .cls file
 english, % ngerman for German
 singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
 %draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
@@ -83,7 +84,17 @@ headsepline, % Uncomment to get a line under the header
 \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
 \hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
 
+% Spanish translation of document sections
+\newcaptionname{spanish}{\authorshipname}{Declaración de propiedad}
+\newcaptionname{spanish}{\byname}{por}
+\newcaptionname{spanish}{\acknowledgementname}{Agradecimientos}
+\newcaptionname{spanish}{\abbrevname}{Abreviaciones}
+\newcaptionname{spanish}{\constantsname}{Constantes físicas}
+\newcaptionname{spanish}{\symbolsname}{Símbolos}
+
 \begin{document}
+
+\selectlanguage{spanish} % Select the language
 
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
