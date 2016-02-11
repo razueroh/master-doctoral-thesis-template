@@ -1,5 +1,5 @@
 ########################################################################
-# Makefile for pdf generation and cleaning auxiliar files
+# Makefile for pdf generation and cleaning auxiliary files
 #
 # Copyright (C) 2016 Rafael Azuero Hurtado
 #
