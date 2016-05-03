@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Masters/Doctoral Thesis 
 % Class File
-% Version 1.2 (21/11/15)
+% Version 1.4 (25/3/16)
 %
 % This class has been downloaded from:
 % http://www.LaTeXTemplates.com
@@ -12,8 +12,9 @@
 %
 % Notes:
 % 1) This class file defines the structure and layout of the template file (main.tex).
-% 2) It has been written in such a way that under most circumstances you 
-% should not need to edit it.
+% 2) It has been written in such a way that under most circumstances you should not need
+% to edit it. Updates would be harder. If you do make changes, please change the name of
+% the file and add a comment to make your changes more visible.
 %
 % Class license:
 % LPPL v1.3c (http://www.latex-project.org/lppl)
@@ -26,12 +27,13 @@
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \newcommand{\classname}{MastersDoctoralThesis}
-\ProvidesClass{\classname}[2015/11/08 v1.2 LaTeXTemplates.com]
+\ProvidesClass{\classname}[2016/03/25 v1.4 LaTeXTemplates.com]
 \providecommand{\baseclass}{book}
 
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}
 \newbool{nolistspace}
+\newbool{chapteroneline}
 \newbool{listtoc}
 \newbool{toctoc}
 \newbool{parskip}
@@ -42,6 +44,7 @@
 \DeclareOption{nohyperref}{\boolfalse{hyperrefsupport}}
 \DeclareOption{nolistspacing}{\booltrue{nolistspace}}
 \DeclareOption{liststotoc}{\booltrue{listtoc}}
+\DeclareOption{chapterinoneline}{\booltrue{chapteroneline}}
 \DeclareOption{toctotoc}{\booltrue{toctoc}}
 \DeclareOption{parskip}{\booltrue{parskip}}
 \DeclareOption{headsepline}{\booltrue{headsepline}}
@@ -57,9 +60,24 @@
 
 \ifbool{parskip}{\RequirePackage{parskip}} % If the parskip option is passed to the class, require the parskip package 
 
+\newcommand{\abovechapterspace}{\vspace*{50pt}}
 \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\abovechapterspace}{}{}
 \patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\abovechapterspace}{}{}
-\newcommand{\abovechapterspace}{\vspace*{50pt}}
+\newcommand{\autodot}{}
+\newcommand{\mdtChapapp}{}
+\ifbool{chapteroneline}{%
+	\patchcmd{\@makechapterhead}{%
+		\if@mainmatter
+		\huge\bfseries \@chapapp\space \thechapter
+		\par\nobreak
+		\vskip 20\p@
+		\fi
+	}{%
+		\if@mainmatter
+		\Huge\bfseries \mdtChapapp\thechapter\autodot\enspace
+		\fi
+	}{}{}
+}
 
 \ifbool{listtoc}{% If the liststotoc option has been passed to the class, add the lists to the table of contents
 	\patchcmd{\listoftables}{\@starttoc{lot}}{%
@@ -151,13 +169,14 @@
 
 \RequirePackage{booktabs} % Required for better table rules
 
-\RequirePackage[centerlast,small,sc]{caption} % Required for customising the captions
-\setlength{\captionmargin}{50pt}
+\RequirePackage{caption} % Required for customising the captions
+\captionsetup{justification=centerlast,font=small,labelfont=sc,margin=50pt}
 
 %----------------------------------------------------------------------------------------
 
 \newcommand{\checktoopen}{% New command to move content to the next page which prints to the next odd page if twosided mode is active  
 \if@openright\cleardoublepage\else\clearpage\fi
+\ifdef{\phantomsection}{\phantomsection}{}% The \phantomsection command is necessary for hyperref to jump to the correct page
 }
 
 \newcommand\bhrule{\typeout{--------------------}}
@@ -170,7 +189,6 @@
 
 \setcounter{tocdepth}{3} % The depth to which the document sections are printed to the table of contents
 \providecommand\addchaptertocentry[1]{%
-\ifdef{\phantomsection}{\phantomsection}{}% The \phantomsection command is necessary for hyperref to jump to the correct page
 \addcontentsline{toc}{chapter}{#1}%
 }
 
@@ -414,3 +432,4 @@ breaklinks=true,
 %----------------------------------------------------------------------------------------
 
 \endinput
+% lazyLizardTracer

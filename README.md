@@ -1,6 +1,6 @@
 # Master/Doctoral Thesis template
 
-This template has been translated to spanish by Rafael Azuero Hurtado. You can find the original template [here](https://www.overleaf.com/latex/templates/template-for-a-masters-slash-doctoral-thesis/mkzrzktcbzfl#.Vr5-Bc7S26l).
+This template has been translated to spanish by Rafael Azuero Hurtado. You can find the original template [here](http://www.latextemplates.com/template/masters-doctoral-thesis).
 
 ## Usage
 
@@ -9,7 +9,7 @@ Use `make` to create the PDF file with `pdflatex` and to clean auxiliary files g
     $ make pdf
     $ make clean
 
-Or you can upload the template to [Overleaf](https://www.overleaf.com/) or [Sharelatex](https://www.sharelatex.com/).
+Or you can upload the template to [Overleaf](https://www.overleaf.com/docs?snip_uri=https://github.com/razueroh/master-doctoral-thesis-template/archive/master.zip) or [Sharelatex](https://www.sharelatex.com/).
 
 ## Changes
 
