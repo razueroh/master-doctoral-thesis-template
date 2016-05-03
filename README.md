@@ -1,6 +1,6 @@
 # Master/Doctoral Thesis template
 
-This template has been translated to spanish by Rafael Azuero Hurtado. You can find the original template [here](https://www.overleaf.com/latex/templates/template-for-a-masters-slash-doctoral-thesis/mkzrzktcbzfl#.Vr5-Bc7S26l).
+This template has been translated to spanish by Rafael Azuero Hurtado. You can find the original template [here](http://www.latextemplates.com/template/masters-doctoral-thesis).
 
 ## Usage
 
