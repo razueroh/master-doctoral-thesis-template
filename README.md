@@ -9,7 +9,7 @@ Use `make` to create the PDF file with `pdflatex` and to clean auxiliary files g
     $ make pdf
     $ make clean
 
-Or you can upload the template to [Overleaf](https://www.overleaf.com/) or [Sharelatex](https://www.sharelatex.com/).
+Or you can upload the template to [Overleaf](https://www.overleaf.com/docs?snip_uri=https://github.com/razueroh/master-doctoral-thesis-template/archive/master.zip) or [Sharelatex](https://www.sharelatex.com/).
 
 ## Changes
 
