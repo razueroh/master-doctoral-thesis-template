@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Masters/Doctoral Thesis
+% Masters/Doctoral Thesis 
 % LaTeX Template
-% Version 2.2 (21/11/15)
+% Version 2.3 (25/3/16)
 %
 % This template has been downloaded from:
 % http://www.LaTeXTemplates.com
@@ -27,6 +27,7 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
 %oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+%chapterinoneline,% Have the chapter title next to the number in one single line
 spanish, % Add language not included in .cls file
 english, % ngerman for German
 singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
@@ -44,7 +45,7 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage{palatino} % Use the Palatino font by default
 
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
 \addbibresource{main.bib} % The filename of the bibliography
 
@@ -109,20 +110,20 @@ headsepline, % Uncomment to get a line under the header
 \begin{titlepage}
 \begin{center}
 
-\textsc{\LARGE \univname}\\[1.5cm] % University name
+{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
 \textsc{\Large Tesis Doctoral}\\[0.5cm] % Thesis type
 
 \HRule \\[0.4cm] % Horizontal line
-{\huge \bfseries \ttitle}\\[0.4cm] % Thesis title
+{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
 \HRule \\[1.5cm] % Horizontal line
-
-\begin{minipage}{0.4\textwidth}
+ 
+\begin{minipage}[t]{0.4\textwidth}
 \begin{flushleft} \large
 \emph{Autor:}\\
 \href{http://www.johnsmith.com}{\authorname} % Author name - remove the \href bracket to remove the link
 \end{flushleft}
 \end{minipage}
-\begin{minipage}{0.4\textwidth}
+\begin{minipage}[t]{0.4\textwidth}
 \begin{flushright} \large
 \emph{Asesor:} \\
 \href{http://www.jamessmith.com}{\supname} % Supervisor name - remove the \href bracket to remove the link
